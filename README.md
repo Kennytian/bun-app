@@ -12,7 +12,11 @@ docker run --rm --name bun -d -p 3003:3000 bun-app
 
 ## Test
 ```shell
-curl http://localhost:3003
+curl http://localhost:3000
+
+curl -X POST http://localhost:3000/send -d '{"mobile":"13800138000"}'
+
+curl -X POST http://localhost:3000/verify -d '{"mobile":"13800138000", "code":"123456"}'
 ```
 
 ## Develop
