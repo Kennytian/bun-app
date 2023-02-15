@@ -1,0 +1,23 @@
+version: '3.9'
+
+# docker compose -f docker-compose.yaml up --build -d
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bun-app
+    container_name: bun-app
+    restart: unless-stopped
+    depends_on:
+      - redis
+    ports:
+      - '4000:3000'
+    environment:
+      REDIS_URL: redis://bun-rds:6379
+      CODE_EXPIRE: 60
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+    container_name: bun-rds
+    command: redis-server --appendonly yes

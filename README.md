@@ -9,6 +9,11 @@ docker build -t bun-app .
 ```shell
 docker run --rm --name bun -d -p 3003:3000 bun-app
 ```
+or
+
+```shell
+docker compose -f docker-compose.yaml up --build -d
+```
 
 ## Test
 ```shell

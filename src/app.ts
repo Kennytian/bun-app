@@ -61,5 +61,7 @@ app.post('/verify', async (req, res) => {
 });
 
 app.listen(process.env.PORT, async () => {
+  console.log('process.env.REDIS_URL====', process.env.REDIS_URL);
+  console.log('process.env.CODE_EXPIRE====', process.env.CODE_EXPIRE);
   console.log(`App is listening on port ${process.env.PORT}`);
 });
