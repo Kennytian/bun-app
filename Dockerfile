@@ -8,4 +8,4 @@ RUN bun install
 
 COPY . .
 
-ENTRYPOINT ["bun", "src/app.ts"]
+CMD ["bun", "start"]
